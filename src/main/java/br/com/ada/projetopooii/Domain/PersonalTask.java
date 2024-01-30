@@ -1,5 +1,7 @@
 package br.com.ada.projetopooii.Domain;
 
-public class PersonalTask extends BaseTask {
+public class PersonalTask {
 
 }
+
+//separar por tipo ????

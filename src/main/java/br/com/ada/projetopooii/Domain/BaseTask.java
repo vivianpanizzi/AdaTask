@@ -9,13 +9,14 @@ public class BaseTask {
     private int prazo;
     private LocalDate dataHoje;
 
+    public BaseTask(String nome, String descricao, int prazo) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.prazo = prazo;
+    }
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getNome() {
