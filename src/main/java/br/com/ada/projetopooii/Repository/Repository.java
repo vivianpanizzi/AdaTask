@@ -1,7 +1,20 @@
 package br.com.ada.projetopooii.Repository;
 
-public class Repository {
+import br.com.ada.projetopooii.Domain.BaseTask;
+
+import java.util.List;
+
+public interface Repository<T extends BaseTask> {
+
+    List<T> getAllTasks();
+
+    T getTaskById(int id);
+
+    void addTask(T task);
+
+    void deleteTask(int id);
+
+
 }
 
 
-//fazer interface

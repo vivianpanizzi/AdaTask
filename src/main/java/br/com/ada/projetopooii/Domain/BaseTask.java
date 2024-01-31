@@ -6,13 +6,13 @@ public class BaseTask {
     private Integer id;
     private String nome;
     private String descricao;
-    private int prazo;
-    private LocalDate dataHoje;
+    private int prazoEmDias;
+    private LocalDate dataCriacao;
 
-    public BaseTask(String nome, String descricao, int prazo) {
+    public BaseTask(String nome, String descricao, int prazoEmDias) {
         this.nome = nome;
         this.descricao = descricao;
-        this.prazo = prazo;
+        this.prazoEmDias = prazoEmDias;
     }
 
     public Integer getId() {
@@ -35,16 +35,16 @@ public class BaseTask {
         this.descricao = descricao;
     }
 
-    public int getPrazo() {
-        return prazo;
+    public int getPrazoEmDias() {
+        return prazoEmDias;
     }
 
-    public void setPrazo(int prazo) {
-        this.prazo = prazo;
+    public void setPrazoEmDias(int prazo) {
+        this.prazoEmDias = prazo;
     }
 
-    public LocalDate getDataHoje() {
-        return dataHoje;
+    public LocalDate getdataCriacao() {
+        return dataCriacao;
     }
 
 }
