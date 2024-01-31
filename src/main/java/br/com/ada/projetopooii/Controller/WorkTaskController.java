@@ -7,11 +7,13 @@ public class WorkTaskController {
     Scanner scanner = new Scanner(System.in);
     public void menuWorkTask () {
 
-        System.out.println("Escolha a ação:");
-        System.out.println("1- Adicionar Tarefa");
-        System.out.println("2- Alterar Tarefa");
-        System.out.println("3- Visualizar Tarefa");
-        System.out.println("4- Deletar Tarefa");
+        System.out.println("---------- Work Task ---------- \n" +
+                "Escolha a ação: \n" +
+                "1- Adicionar Tarefa \n" +
+                "2- Alterar Tarefa \n" +
+                "3- Visualizar Tarefa \n" +
+                "4- Deletar Tarefa \n" +
+                "Digite a ação escolhida: ");
         int opcao = scanner.nextInt();
 
     }
