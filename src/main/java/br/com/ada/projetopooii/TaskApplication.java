@@ -4,6 +4,7 @@ import br.com.ada.projetopooii.Controller.PersonalTaskController;
 import br.com.ada.projetopooii.Controller.StudyTaskController;
 import br.com.ada.projetopooii.Controller.WorkTaskController;
 import br.com.ada.projetopooii.Domain.PersonalTask;
+import br.com.ada.projetopooii.Domain.StudyTask;
 import br.com.ada.projetopooii.Repository.TaskRepository;
 
 import java.util.ArrayList;
@@ -18,15 +19,16 @@ public class TaskApplication {
         List<PersonalTask> personalTasks = new ArrayList<>();
 
         TaskRepository<PersonalTask> personalTaskRepository = new TaskRepository<>();
+        TaskRepository<StudyTask> studyTaskRepository = new TaskRepository<>();
         PersonalTaskController personalTaskController = new PersonalTaskController(personalTaskRepository);
-        StudyTaskController studyTaskController = new StudyTaskController();
+        StudyTaskController studyTaskController = new StudyTaskController(studyTaskRepository);
         WorkTaskController workTaskController = new WorkTaskController();
 
         System.out.println("--------   Task    --------");
         System.out.println("---------------------------");
 
 
-        System.out.println("--------   Menu    --------");
+        System.out.println("\n"+"--------   Menu    --------");
         System.out.println("Escolha o tipo de tarefa: \n" +
                             "1- Pessoal \n" +
                             "2- Estudo \n" +

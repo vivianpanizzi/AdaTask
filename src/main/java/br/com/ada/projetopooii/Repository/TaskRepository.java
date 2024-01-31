@@ -31,6 +31,16 @@ public class TaskRepository<T extends BaseTask> implements Repository<T> {
 
     @Override
     public void deleteTask(int id) {
+        T taskDelete = null;
+        for (T task : tasks) {
+            if (task.getId() == id) {
+                taskDelete = task;
+                break;
+            }
+        }
 
+        if ( taskDelete != null){
+            tasks.remove(taskDelete);
+        }
     }
 }

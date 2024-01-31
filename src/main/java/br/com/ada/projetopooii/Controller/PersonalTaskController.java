@@ -3,7 +3,6 @@ package br.com.ada.projetopooii.Controller;
 import br.com.ada.projetopooii.Domain.PersonalTask;
 import br.com.ada.projetopooii.Repository.TaskRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,7 +20,7 @@ public class PersonalTaskController {
         boolean sair = false;
 
         while (!sair) {
-            System.out.println("---------- Personal Task ---------- \n" +
+            System.out.println("\n"+"---------- Personal Task ---------- \n" +
                     "Escolha a ação: \n" +
                     "1- Adicionar Tarefa \n" +
                     "2- Alterar Tarefa \n" +
@@ -55,7 +54,7 @@ public class PersonalTaskController {
 
     public void addTask() {
         scanner.nextLine();
-        System.out.println("------ Criando Tarefa Pessoal ------ \n" +
+        System.out.println("\n"+"------ Criando Tarefa Pessoal ------ \n" +
                             "Digite o nome da tarefa");
         String nome = scanner.nextLine();
 
@@ -92,8 +91,9 @@ public class PersonalTaskController {
         scanner.nextLine();
         System.out.println("------ Deletando Tarefa Pessoal ------ \n" +
                 "Digite o id da tarefa para excluir:");
-        Integer idExcluir = scanner.nextInt();
-        //deleteTaskById(idExcluir);
+        int id = scanner.nextInt();
+        taskRepository.deleteTask(id);
+
     }
 
 }
