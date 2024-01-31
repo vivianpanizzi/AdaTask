@@ -1,6 +1,7 @@
 package br.com.ada.projetopooii.Controller;
 
 import br.com.ada.projetopooii.Domain.PersonalTask;
+import br.com.ada.projetopooii.Repository.TaskRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +9,11 @@ import java.util.Scanner;
 
 public class PersonalTaskController {
 
-    List<PersonalTask> personalTasks = new ArrayList<>();
+    private TaskRepository<PersonalTask> taskRepository;
     Scanner scanner = new Scanner(System.in);
 
-    public PersonalTaskController(List<PersonalTask> personalTasks) {
-        this.personalTasks = personalTasks;
+    public PersonalTaskController(TaskRepository<PersonalTask> taskRepository) {
+        this.taskRepository = taskRepository;
     }
 
     public void menuPersonalTask () {
@@ -64,9 +65,9 @@ public class PersonalTaskController {
         System.out.println("Em quantos dias a tarefa deverá ser cumprida?");
         Integer prazoEmDias = scanner.nextInt();
 
-        int nextId = personalTasks.size() + 1;
+        int nextId = taskRepository.getAllTasks().size() + 1;
         PersonalTask task = new PersonalTask(nextId, nome, descricao, prazoEmDias);
-        personalTasks.add(task);
+        taskRepository.getAllTasks().add(task);
 
     }
 
@@ -75,11 +76,12 @@ public class PersonalTaskController {
     }
 
     public void viewTask() {
-        if (personalTasks.isEmpty()) {
+        List<PersonalTask> tasks = taskRepository.getAllTasks();
+        if (tasks.isEmpty()) {
             System.out.println("Nenhuma tarefa disponível.");
         } else {
-            for (int i = 0; i < personalTasks.size(); i++) {
-                PersonalTask task = personalTasks.get(i);
+            for (int i = 0; i < tasks.size(); i++) {
+                PersonalTask task = tasks.get(i);
                 System.out.println((i + 1) + ". " + task.toString());
             }
         }

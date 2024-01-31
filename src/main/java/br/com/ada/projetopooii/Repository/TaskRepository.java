@@ -11,7 +11,7 @@ public class TaskRepository<T extends BaseTask> implements Repository<T> {
 
     @Override
     public List<T> getAllTasks() {
-        return null;
+        return tasks;
     }
 
     @Override
