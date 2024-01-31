@@ -5,6 +5,8 @@ import br.com.ada.projetopooii.Controller.StudyTaskController;
 import br.com.ada.projetopooii.Controller.WorkTaskController;
 import br.com.ada.projetopooii.Domain.PersonalTask;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TaskApplication {
@@ -12,11 +14,11 @@ public class TaskApplication {
 
         Scanner scanner = new Scanner(System.in);
 
-        PersonalTaskController personalTaskController = new PersonalTaskController();
+        List<PersonalTask> personalTasks = new ArrayList<>();
+
+        PersonalTaskController personalTaskController = new PersonalTaskController(personalTasks);
         StudyTaskController studyTaskController = new StudyTaskController();
         WorkTaskController workTaskController = new WorkTaskController();
-
-        PersonalTask personalTask = new PersonalTask("Arrumar quarto", "Limpar e arrumar o quarto", 15);
 
         System.out.println("--------   Task    --------");
         System.out.println("---------------------------");
@@ -46,16 +48,12 @@ public class TaskApplication {
                 System.out.println("Opção inválida");
         }
 
-        //iniciar o printl em cada caso
-
         //localdate.plusdays(5);
 
         //LocalDate diaHoje = LocalDate.now();
         //plus - plusDays(1);
         //minus - minusDays();
     }
-
-    //Projeto final do curso de POOII do Devas
 
 }
 

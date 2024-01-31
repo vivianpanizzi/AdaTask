@@ -9,7 +9,8 @@ public class BaseTask {
     private int prazoEmDias;
     private LocalDate dataCriacao;
 
-    public BaseTask(String nome, String descricao, int prazoEmDias) {
+    public BaseTask(Integer id, String nome, String descricao, int prazoEmDias) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.prazoEmDias = prazoEmDias;

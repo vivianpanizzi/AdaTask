@@ -16,6 +16,22 @@ public class WorkTaskController {
                 "Digite a ação escolhida: ");
         int opcao = scanner.nextInt();
 
+        switch (opcao) {
+            case 1:
+                //
+                break;
+            case 2:
+                // Lógica para alterar tarefa
+                break;
+            case 3:
+                // Lógica para visualizar tarefa
+                break;
+            case 4:
+                // Lógica para deletar tarefa
+                break;
+            default:
+                System.out.println("Opção inválida");
+        }
     }
 
 }

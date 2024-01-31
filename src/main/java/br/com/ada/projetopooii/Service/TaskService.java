@@ -2,12 +2,12 @@ package br.com.ada.projetopooii.Service;
 
 public interface TaskService {
 
-    void adicionarTarefa();
+    void addTask();
 
-    void editarTarefa();
+    void editTask();
 
-    void visualizarTarefa();
+    void viewTask();
 
-    void deletarTarefa();
+    void deleteTask();
 
 }

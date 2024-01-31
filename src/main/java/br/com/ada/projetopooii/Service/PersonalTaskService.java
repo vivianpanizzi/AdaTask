@@ -1,24 +1,23 @@
 package br.com.ada.projetopooii.Service;
 
-public class PersonalTaskService implements TaskService{
+public class PersonalTaskService implements TaskService {
 
     @Override
-    public void adicionarTarefa() {
+    public void addTask() {
+    }
+
+    @Override
+    public void editTask() {
 
     }
 
     @Override
-    public void editarTarefa() {
+    public void viewTask() {
 
     }
 
     @Override
-    public void visualizarTarefa() {
-
-    }
-
-    @Override
-    public void deletarTarefa() {
+    public void deleteTask() {
 
     }
 }
