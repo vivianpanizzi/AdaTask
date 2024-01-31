@@ -5,6 +5,7 @@ import br.com.ada.projetopooii.Controller.StudyTaskController;
 import br.com.ada.projetopooii.Controller.WorkTaskController;
 import br.com.ada.projetopooii.Domain.PersonalTask;
 import br.com.ada.projetopooii.Domain.StudyTask;
+import br.com.ada.projetopooii.Domain.WorkTask;
 import br.com.ada.projetopooii.Repository.TaskRepository;
 
 import java.util.ArrayList;
@@ -20,9 +21,11 @@ public class TaskApplication {
 
         TaskRepository<PersonalTask> personalTaskRepository = new TaskRepository<>();
         TaskRepository<StudyTask> studyTaskRepository = new TaskRepository<>();
+        TaskRepository<WorkTask> workTaskRepository = new TaskRepository<>();
+
         PersonalTaskController personalTaskController = new PersonalTaskController(personalTaskRepository);
         StudyTaskController studyTaskController = new StudyTaskController(studyTaskRepository);
-        WorkTaskController workTaskController = new WorkTaskController();
+        WorkTaskController workTaskController = new WorkTaskController(workTaskRepository);
 
         System.out.println("--------   Task    --------");
         System.out.println("---------------------------");
